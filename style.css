@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #87CEEB; /* Sky blue */
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  background-color: #f0f0f0;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+#bow {
+  position: absolute;
+  left: 50px;
+  top: 175px;
+  width: 40px;
+  height: 40px;
+  background-color: #8B4513; /* Brown */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+#target {
+  position: absolute;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  animation: moveTarget 3s linear infinite;
+}
+
+@keyframes moveTarget {
+  0% { top: 0; }
+  50% { top: 350px; }
+  100% { top: 0; }
+}
+
+#arrow {
+  position: absolute;
+  left: 90px; /* Positioned to the right of the bow */
+  top: 190px;
+  width: 40px;
+  height: 10px;
+  background-color: brown;
+  display: none;
+}
+
+#game-over-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF4500; /* Orange */
+  text-shadow: 2px 2px 4px #000;
+  display: none;
+}
